@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="canvas-menu">
+        Width:
+        <input
+          type="number"
+          name="width"
+          id="canvasWidth"
+          value="10"
+          min="1"
+          max="45"
+          onchange="handleCanvasUpdate(event)"
+        />
+        Height:
+        <input
+          type="number"
+          name="height"
+          id="canvasHeight"
+          value="10"
+          min="1"
+          max="45"
+          onchange="handleCanvasUpdate(event)"
+        />
+        Color 1:
+        <input
+          type="color"
+          name="colorOne"
+          value="#72abf1"
+          id="colorOne"
+          onchange="handleCanvasUpdate(event)"
+        />
+        Color 2:
+        <input
+          type="color"
+          name="colorTwo"
+          value="#fa7272"
+          id="colorTwo"
+          onchange="handleCanvasUpdate(event)"
+        />
+        <button onclick="handleUndo()">Undo</button>
+        <button onclick="handleCreatePuzzle()">Create Puzzle</button>
+      </div>
+      <canvas id="myCanvas" oncontextmenu="return false;"></canvas>
+      <button onclick="checkSolvability()">Check Solvability</button>
+      <canvas id="puzzle" oncontextmenu="return false;"></canvas>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
